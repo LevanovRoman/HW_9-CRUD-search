@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+ <h2>Результат поиска</h2>
+ {% for p in post %}
+ <h3>{{ p.name }}</h3>
+        <p>Специализация: {{ p.specialization }}</p>
+        <p>Адрес: {{ p.address }}</p>
+        <p>Сайт: {{ p.site }}</p>
+        <p>Телефон: {{ p.phone }}</p>
+ <hr>
+{% endfor %}
+</body>
+</html>

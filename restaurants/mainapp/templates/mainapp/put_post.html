@@ -1,0 +1,9 @@
+{% extends 'mainapp/home.html' %}
+{% block content %}
+<h2>{{ title }}</h2>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" value="Update">Изменить</button>
+</form>
+{% endblock %}

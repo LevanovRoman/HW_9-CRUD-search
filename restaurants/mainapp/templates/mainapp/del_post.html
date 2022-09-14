@@ -1,0 +1,9 @@
+{% extends 'mainapp/home.html' %}
+{% block content %}
+<form method="post">
+{% csrf_token %}
+<p>Are you sure you want to delete "{{ object }}"?</p>
+<input type="submit" value="Confirm">
+    <p><a href="{% url 'home' %}">Не удалять</a></p>
+</form>
+{% endblock %}

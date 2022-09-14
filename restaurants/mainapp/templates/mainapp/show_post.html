@@ -1,0 +1,9 @@
+{% extends 'mainapp/home.html' %}
+{% block content %}
+ <h3>{{ post.name }}</h3>
+        <p>Специализация: {{ post.specialization }}</p>
+        <p>Адрес: {{ post.address }}</p>
+        <p>Сайт: {{ post.site }}</p>
+        <p>Телефон: {{ post.phone }}</p>
+
+{% endblock %}

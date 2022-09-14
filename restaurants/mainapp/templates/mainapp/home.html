@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="menu">
+  <ul>
+      {% for m in menu %}
+         <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
+      {% endfor %}
+
+  </ul>
+
+</div>
+{% block content %}
+<div>
+    <h2>Рестораны Краснодара</h2>
+    <form action="{% url 'search' %}" method="get">
+        <input type="text" name="q" placeholder="Поиск по специализации...">
+    </form>
+        {% for p in posts %}
+        <h3>{{ p.name }}</h3>
+        <p>Специализация: {{ p.specialization }}</p>
+        <p>Адрес: {{ p.address }}</p>
+        <p>Сайт: {{ p.site }}</p>
+        <p>Телефон: {{ p.phone }}</p>
+        <p><a href="{{ p.get_absolute_url }}">Показать запись</a></p>
+        <p><a href="{{ p.get_absolute_url }}update ">Изменить запись</a></p>
+        <p><a href="{{ p.get_absolute_url }}delete ">Удалить запись</a></p>
+        <hr>
+        {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>
